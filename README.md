@@ -60,11 +60,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## 修改九宫格为六宫格
 
-1.使用的组件是来自MUI中的grid-pagination.html中的九宫格组件
-2.修改样式
+1. 使用的组件是来自MUI中的grid-pagination.html中的九宫格组件
+2. 修改样式
 
 ## 完成切换中间内容区域组件的动态效果
 
-1.将要需要动画的元素用transition包裹起来
-2.使用动画类名来添加动态效果,每个组件的初始位置应该为translateX(100%),离开时的位置应该为translateX(-100%)
-3.给大盒子容器设置overflow-x:hidden,不能设置Y,因为手机可以上下滑动
+1. 将要需要动画的元素用transition包裹起来
+2. 使用动画类名来添加动态效果,每个组件的初始位置应该为translateX(100%),离开时的位置应该为translateX(-100%)
+3. 给大盒子容器设置overflow-x:hidden,不能设置Y,因为手机可以上下滑动
