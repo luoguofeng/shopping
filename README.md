@@ -68,3 +68,26 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 1. 将要需要动画的元素用transition包裹起来
 2. 使用动画类名来添加动态效果,每个组件的初始位置应该为translateX(100%),离开时的位置应该为translateX(-100%)
 3. 给大盒子容器设置overflow-x:hidden,不能设置Y,因为手机可以上下滑动
+
+## 改造新闻资讯组件
+
+1. 找到MUI的组件media-list,复制样式,报错,是由于图片找不到
+2. 给app底部加paddingBottom
+3. 定义全局时间过滤器,使用日期格式化插件moment
+
+## 实现新闻资讯跳转到新闻详情
+
+1. 把列表中的a链接改为router-link,同时,在跳转的时候传入参数id,给to动态绑定属性 `:to="'/home/newsinfo/'+item.id"`
+2. 在新闻详情页面利用 `this.$route.params`来获取传入的id参数
+3. 发送请求获取数据,渲染到页面
+
+## 单独封装一个 comment.vue评论子组件
+
+1. 先创建一个单独的comment.vue的文件
+2. 在需要评论组件的地方导入评论组件 `import comment from 'comment.vue'`
+3. 在父组件中的components属性中将comment组件注册为自己的组件
+
+## 实现加载更多评论功能
+
+1. 点击加载更多按钮,让pageIndex+1,然后请求数据,每次将请求回来的数据拼接到老数组中
+2. 利用数组的contact来实现数据拼接功能

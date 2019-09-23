@@ -5,6 +5,8 @@ import HomeContainer from './components/HomeContainer.vue'
 import MemberContainer from './components/MemberContainer.vue'
 import SearchContainer from './components/SearchContainer.vue'
 import ShoppingCarContainer from './components/ShoppingCarContainer.vue'
+import newList from './components/newList.vue'
+import newsinfo from './components/newsinfo.vue'
 
 const router = new VueRouter({
     routes: [{
@@ -26,6 +28,14 @@ const router = new VueRouter({
         {
             path: '/search',
             component: ShoppingCarContainer
+        },
+        {
+            path: '/home/newList',
+            component: newList
+        },
+        {
+            path: '/home/newsinfo/:id',
+            component: newsinfo
         }
     ],
     linkActiveClass: 'mui-active' //覆盖默认的router-link-active 类

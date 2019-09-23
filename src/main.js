@@ -10,7 +10,7 @@ import Mint from 'mint-ui';
 import '../node_modules/mint-ui/lib/style.css'
 import './assets/lib/css/mui.css'
 import './assets/lib/css/icons-extra.css'
-import './assets/lib/fonts/mui-icons-extra.ttf' 
+import './assets/lib/fonts/mui-icons-extra.ttf'
 Vue.use(Mint);
 
 // 整合axios 
@@ -20,14 +20,22 @@ axios.defaults.baseURL = 'https://autumnfish.cn';
 // 把axios设置给Vue的原型
 Vue.prototype.$axios = axios
 
+//导入时间格式化插件moment
+import moment from '../node_modules/moment/moment.js'
+
+//定义全局过滤器
+Vue.filter('dateFormat', function (dateStr) {
+  return moment(dateStr).format('YYYY-MM-DD HH:mm:ss') 
+})
+
 //注册理由模块
 Vue.use(VueRouter)
 //引入路由模块
 import router from './router'
 
-Vue.config.productionTip = false  //不显示生产信息
+Vue.config.productionTip = false //不显示生产信息
 
-new Vue({
+new Vue({ 
   router,
   render: h => h(App),
 }).$mount('#app')
